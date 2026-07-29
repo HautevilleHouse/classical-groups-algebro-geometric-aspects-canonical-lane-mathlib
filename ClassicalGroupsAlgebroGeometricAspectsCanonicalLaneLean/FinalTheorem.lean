@@ -1,0 +1,21 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.ClassicalGroupsAlgebroGeometricAspectsCanonicalLaneLean.ClassicalGroupsDefinition
+import HautevilleHouse.ClassicalGroupsAlgebroGeometricAspectsCanonicalLaneLean.FlagVarieties
+import HautevilleHouse.ClassicalGroupsAlgebroGeometricAspectsCanonicalLaneLean.RootSystems
+import HautevilleHouse.ClassicalGroupsAlgebroGeometricAspectsCanonicalLaneLean.Grassmannians
+import HautevilleHouse.ClassicalGroupsAlgebroGeometricAspectsCanonicalLaneLean.ParabolicSubgroups
+import HautevilleHouse.ClassicalGroupsAlgebroGeometricAspectsCanonicalLaneLean.InvariantTheory
+import HautevilleHouse.ClassicalGroupsAlgebroGeometricAspectsCanonicalLaneLean.SymmetricSpaces
+
+namespace HautevilleHouse
+namespace ClassicalGroupsAlgebroGeometricAspectsCanonicalLaneLean
+
+def ConstrainedClassicalGroupsClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem classical_groups_endgame (A : AdmissibleClass) :
+    ConstrainedClassicalGroupsClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end ClassicalGroupsAlgebroGeometricAspectsCanonicalLaneLean
+end HautevilleHouse
